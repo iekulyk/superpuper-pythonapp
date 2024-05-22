@@ -1,0 +1,38 @@
+# Headless service for stable DNS entries of StatefulSet members.
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  namespace: mysql
+spec:
+  selector:
+    app: mysql
+  ports:
+  - name: mysql
+    port: 3306
+  clusterIP: None
+
+# pod-name.service-name.namespace.svc.cluster.local
+# pod-name.service-name
+# mysql-0.mysql
+
+# ---
+# # Client service for connecting to any MySQL instance for reads.
+# # For writes, you must instead connect to the primary: mysql-0.mysql.
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: mysql-read
+#   namespace: mysql
+#   labels:
+#     app: mysql
+#     app.kubernetes.io/name: mysql
+#     readonly: "true"
+# spec:
+#   ports:
+#   - name: mysql
+#     port: 3306
+#   selector:
+#     app: mysql
+
+# ---
