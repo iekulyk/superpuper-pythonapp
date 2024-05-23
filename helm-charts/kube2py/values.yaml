@@ -15,10 +15,10 @@ kube2py:
     PORT: "8080"
     APP_ENV: "testing-helm"
   secrets:
-    password: placeholder
-    login: placeholder
+    password: MyStrongPassword
+    login: SuperUser
     external_endpoint: http://httpbin-api.mateapp.svc.cluster.local
-    DB_CONNECTION: placeholder
+    DB_CONNECTION: mysql+mysqlconnector://app_user:1234@mysql-0.mysql.mysql.svc.cluster.local/app_db
 
   image:
     name: kube2py
