@@ -128,11 +128,6 @@ jobs:
         name: helm-package
         path: .
 
-    - uses: actions/download-artifact@v4
-      with:
-        name: helm-artifacts
-        path: .
-
     - name: Set Up Helm
       uses: azure/setup-helm@v4.2.0
 
