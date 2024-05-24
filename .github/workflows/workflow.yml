@@ -11,6 +11,7 @@ env:
   PYTHON_VERSION: 3.8
   DOCKER_IMAGE_NAME: kube2py
 
+  
 jobs:
   python-ci:
     strategy:
