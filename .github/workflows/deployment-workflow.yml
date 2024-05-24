@@ -18,6 +18,7 @@ on:
         default: kube2py
         type: string
 
+        
 jobs:
     deploy-helm:
       name: ${{ inputs.environment }}
